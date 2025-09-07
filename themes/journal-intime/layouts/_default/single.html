@@ -1,6 +1,7 @@
 {{ define "main" }}
-<article class="single-post">
+<article class="single-post mood-{{ .Params.mood | default "neutral" | urlize }}">
     <div class="post-date">
+        <span class="mood-indicator"></span>
         {{ .Date.Format "2 janvier 2006" }}
     </div>
     
@@ -9,5 +10,7 @@
     <div class="post-content">
         {{ .Content }}
     </div>
+    
+    {{- partial "related-entries.html" . -}}
 </article>
 {{ end }}

@@ -11,8 +11,9 @@
 {{- if $recentPosts -}}
 <section class="journal-entries">
     {{- range $recentPosts -}}
-    <article class="journal-entry">
+    <article class="journal-entry mood-{{ .Params.mood | default "neutral" | urlize }}">
         <div class="entry-date">
+            <span class="mood-indicator"></span>
             {{ .Date.Format "2 janvier 2006" }}
         </div>
         

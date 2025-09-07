@@ -1,0 +1,27 @@
+baseURL = 'https://example.org/'
+languageCode = 'en'
+title = 'Journal Intime - Demo'
+theme = 'journal-intime'
+
+summarylength = 20
+enableEmoji = true
+enableRobotsTXT = true
+
+[markup]
+    [markup.goldmark]
+      [markup.goldmark.renderer]
+        unsafe=true
+
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+
+[params]
+  title = "Journal Intime Demo"
+  author = "Demo Author"
+  description = "Fragments of shadow and glimpses of light"
+  keywords = ["journal", "personal", "intimate", "writing", "reflection"]
+  mainSections = ["posts"]
+  singleDateFormat = "2 January 2006"
+  indexDateFormat = "2 January 2006"
+  listDateFormat = "2 January 2006"

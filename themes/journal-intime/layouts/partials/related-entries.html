@@ -1,0 +1,54 @@
+{{- $currentPage := . -}}
+{{- $allPages := where .Site.RegularPages "Type" "posts" -}}
+{{- $relatedPages := slice -}}
+
+{{- range $allPages -}}
+    {{- if ne . $currentPage -}}
+        {{- $score := 0 -}}
+        
+        {{- /* Score basé sur les catégories communes */ -}}
+        {{- range $currentPage.Params.categories -}}
+            {{- if in $.Params.categories . -}}
+                {{- $score = add $score 3 -}}
+            {{- end -}}
+        {{- end -}}
+        
+        {{- /* Score basé sur les tags communs */ -}}
+        {{- range $currentPage.Params.tags -}}
+            {{- if in $.Params.tags . -}}
+                {{- $score = add $score 2 -}}
+            {{- end -}}
+        {{- end -}}
+        
+        {{- /* Score basé sur l'humeur similaire */ -}}
+        {{- if eq $currentPage.Params.mood $.Params.mood -}}
+            {{- $score = add $score 2 -}}
+        {{- end -}}
+        
+        {{- /* Score basé sur la proximité temporelle */ -}}
+        {{- $daysDiff := div (sub $currentPage.Date.Unix $.Date.Unix) 86400 -}}
+        {{- if and (gt $daysDiff -30) (lt $daysDiff 30) -}}
+            {{- $score = add $score 1 -}}
+        {{- end -}}
+        
+        {{- if gt $score 1 -}}
+            {{- $relatedPages = $relatedPages | append (dict "Page" . "Score" $score) -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+
+{{- if $relatedPages -}}
+    {{- $sortedPages := sort $relatedPages "Score" "desc" -}}
+    {{- $topPages := first 3 $sortedPages -}}
+    
+    <aside class="related-entries">
+        <h3>Résonances intérieures</h3>
+        {{- range $topPages -}}
+            <a href="{{ .Page.RelPermalink }}" class="related-link">
+                <span class="mood-indicator mood-{{ .Page.Params.mood | default "neutral" | urlize }}"></span>
+                {{ .Page.Title }}
+                <small class="related-date">{{ .Page.Date.Format "2 janvier 2006" }}</small>
+            </a>
+        {{- end -}}
+    </aside>
+{{- end -}}

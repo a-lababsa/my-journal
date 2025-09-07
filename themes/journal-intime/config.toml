@@ -1,0 +1,7 @@
+# Hugo Theme Configuration for Journal Intime
+# This file specifies the minimum Hugo version required
+
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.118.0"
