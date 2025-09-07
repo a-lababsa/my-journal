@@ -1,0 +1,13 @@
+name = "Journal Intime"
+license = "MIT"
+licenselink = "https://github.com/yourname/hugo-theme-journal-intime/blob/main/LICENSE"
+description = "Un thème Hugo élégant et minimaliste pour journal personnel, inspiré par l'esthétique beige et crème"
+homepage = "https://github.com/yourname/hugo-theme-journal-intime"
+demosite = "https://yourname.github.io/hugo-theme-journal-intime"
+tags = ["blog", "journal", "minimal", "elegant", "responsive"]
+features = ["responsive", "minimal", "french"]
+min_version = "0.118.0"
+
+[author]
+  name = "Claude"
+  homepage = "https://claude.ai"

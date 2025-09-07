@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="home-intro">
+    <div class="date-display">
+        {{ now.Format "2 janvier 2006" }}
+    </div>
+</div>
+
+{{- $posts := where .Site.RegularPages "Type" "posts" -}}
+{{- $recentPosts := first 10 $posts -}}
+
+{{- if $recentPosts -}}
+<section class="journal-entries">
+    {{- range $recentPosts -}}
+    <article class="journal-entry">
+        <div class="entry-date">
+            {{ .Date.Format "2 janvier 2006" }}
+        </div>
+        
+        <h2 class="entry-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        
+        <div class="entry-content">
+            {{ if .Summary }}
+                {{ .Summary | plainify }}
+                {{- if .Truncated -}}
+                <p class="continue-reading">
+                    <a href="{{ .RelPermalink }}">...</a>
+                </p>
+                {{- end -}}
+            {{ else }}
+                {{ .Content | plainify | truncate 200 }}
+            {{ end }}
+        </div>
+    </article>
+    {{- end -}}
+</section>
+{{- end -}}
+{{ end }}

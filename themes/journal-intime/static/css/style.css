@@ -1,0 +1,212 @@
+/* Journal Intime Theme - CSS inspiré par le design de l'image */
+
+/* Variables de couleurs */
+:root {
+    --bg-color: #f5f1e8;           /* Beige/crème de fond */
+    --text-color: #2c2c2c;         /* Noir foncé pour le texte */
+    --link-color: #2c2c2c;         /* Liens en noir */
+    --link-hover: #666;            /* Gris pour hover */
+    --border-color: #e0d8c8;       /* Bordures subtiles */
+    --date-color: #666;            /* Gris pour les dates */
+}
+
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/* Header */
+.site-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.site-title {
+    font-size: 3.2rem;
+    font-weight: normal;
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
+}
+
+.site-title a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.site-title a:hover {
+    color: var(--link-hover);
+}
+
+/* Navigation */
+.site-nav {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    font-size: 1.1rem;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--link-hover);
+}
+
+/* Date d'accueil */
+.home-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.date-display {
+    font-size: 1.1rem;
+    color: var(--date-color);
+    margin-bottom: 60px;
+}
+
+/* Entrées de journal */
+.journal-entries {
+    max-width: 100%;
+}
+
+.journal-entry {
+    margin-bottom: 80px;
+    padding-bottom: 40px;
+}
+
+.journal-entry:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.entry-date, .post-date {
+    font-size: 1rem;
+    color: var(--date-color);
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
+.entry-title, .post-title {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    font-style: italic;
+}
+
+.entry-title a, .post-title {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.entry-title a:hover {
+    color: var(--link-hover);
+}
+
+.entry-content, .post-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.continue-reading {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.continue-reading a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-style: italic;
+}
+
+/* Page individuelle */
+.single-post {
+    max-width: 100%;
+}
+
+.single-post .post-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.single-post .post-content {
+    margin-top: 40px;
+}
+
+/* Page de liste */
+.list-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.list-header h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 40px 20px;
+    }
+    
+    .site-title {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .site-nav {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1rem;
+    }
+    
+    .entry-title, .post-title {
+        font-size: 1.6rem;
+    }
+    
+    .entry-content, .post-content {
+        font-size: 1rem;
+    }
+    
+    .single-post .post-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 15px;
+    }
+    
+    .site-title {
+        font-size: 2rem;
+    }
+    
+    .entry-title, .post-title {
+        font-size: 1.4rem;
+    }
+}

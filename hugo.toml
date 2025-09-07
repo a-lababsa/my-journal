@@ -2,7 +2,7 @@ baseURL = 'https://example.org/'
 languageCode = 'fr-fr'
 DefaultContentLanguage = "fr"
 title = 'Mon Journal Intime'
-theme = 'shadow-journal'
+theme = 'journal-intime'
 
 summarylength = 10
 enableEmoji = true
