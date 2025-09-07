@@ -1,8 +1,40 @@
 baseURL = 'https://example.org/'
 languageCode = 'fr-fr'
+DefaultContentLanguage = "fr"
 title = 'Mon Journal Intime'
-theme = 'diary'
+theme = 'shadow-journal'
+
+summarylength = 10
+enableEmoji = true
+enableRobotsTXT = true
+
+# Syntax highlighting
+pygmentsUseClasses = true   
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+[markup]
+    [markup.goldmark]
+      [markup.goldmark.renderer]
+        unsafe=true
+
+[taxonomies]
+    category = "categories"
+    series = "series"
+    tag = "tags"
 
 [params]
-  subtitle = "Mes pensées au jour le jour"
-  author = "Moi"
+  title = "Mon Journal Intime"
+  author = "Âme Nocturne"
+  subtitle = "Fragments d'ombre et éclats de lumière"
+  description = "Un espace d'introspection où les pensées prennent forme dans la pénombre mystérieuse de l'âme"
+  keywords = ["journal intime", "introspection", "réflexions", "ombre", "lumière", "pensées"]
+  favicon = "favicons/"
+  customCss = []
+  customJs = ["js/mystical.js"] 
+  mainSections = ["posts"]
+  showRelatedPosts = true
+  numberOfRelatedPosts = 3
+  singleDateFormat = "2 janvier 2006"
+  indexDateFormat = "2 janvier 2006"
+  listDateFormat = "2 janvier 2006"

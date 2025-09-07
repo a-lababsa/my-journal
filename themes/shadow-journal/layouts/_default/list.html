@@ -1,0 +1,77 @@
+{{ define "main" }}
+<div class="posts-list">
+    {{- if .Title -}}
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{- end -}}
+    
+    {{- if .Content -}}
+    <div class="page-content">
+        {{ .Content }}
+    </div>
+    {{- end -}}
+    
+    {{- $paginator := .Paginate (where .Pages "Type" "posts") -}}
+    {{- range $paginator.Pages -}}
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            
+            <div class="post-meta">
+                <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                    {{ .Date.Format "2 janvier 2006" }}
+                </time>
+                
+                {{- if .Params.categories -}}
+                <div class="post-categories">
+                    {{- range .Params.categories -}}
+                    <span class="post-category category-{{ . | urlize }}">{{ . }}</span>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+                
+                {{- if .Params.tags -}}
+                <div class="taxonomy-terms">
+                    {{- range .Params.tags -}}
+                    <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+            </div>
+        </header>
+        
+        <div class="post-content">
+            {{ if .Summary }}
+                {{ .Summary }}
+                {{- if .Truncated -}}
+                <p><a href="{{ .RelPermalink }}" class="read-more">Continuer la lecture...</a></p>
+                {{- end -}}
+            {{ else }}
+                {{ .Content }}
+            {{ end }}
+        </div>
+    </article>
+    {{- end -}}
+    
+    {{- if gt $paginator.TotalPages 1 -}}
+    <nav class="pagination">
+        {{- if $paginator.HasPrev -}}
+        <a href="{{ $paginator.Prev.URL }}" class="pagination-prev">← Précédent</a>
+        {{- end -}}
+        
+        {{- range $paginator.Pagers -}}
+        {{- if eq . $paginator -}}
+        <span class="current">{{ .PageNumber }}</span>
+        {{- else -}}
+        <a href="{{ .URL }}">{{ .PageNumber }}</a>
+        {{- end -}}
+        {{- end -}}
+        
+        {{- if $paginator.HasNext -}}
+        <a href="{{ $paginator.Next.URL }}" class="pagination-next">Suivant →</a>
+        {{- end -}}
+    </nav>
+    {{- end -}}
+</div>
+{{ end }}

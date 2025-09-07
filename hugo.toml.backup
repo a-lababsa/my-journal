@@ -1,0 +1,8 @@
+baseURL = 'https://example.org/'
+languageCode = 'fr-fr'
+title = 'Mon Journal Intime'
+theme = 'diary'
+
+[params]
+  subtitle = "Mes pensées au jour le jour"
+  author = "Moi"

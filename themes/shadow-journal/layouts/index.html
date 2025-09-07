@@ -1,0 +1,94 @@
+{{ define "main" }}
+<div class="home-intro">
+    {{- if .Content -}}
+    <div class="page-content">
+        {{ .Content }}
+    </div>
+    {{- else -}}
+    <div class="welcome-message">
+        <p><em>Bienvenue dans cet espace d'ombre et de lumière, où les pensées prennent forme dans la pénombre de l'introspection.</em></p>
+    </div>
+    {{- end -}}
+</div>
+
+{{- $posts := where .Site.RegularPages "Type" "posts" -}}
+{{- $recentPosts := first 5 $posts -}}
+
+{{- if $recentPosts -}}
+<section class="recent-posts">
+    <h2 class="section-title">Dernières entrées</h2>
+    
+    {{- range $recentPosts -}}
+    <article class="post">
+        <header class="post-header">
+            <h3 class="post-title">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h3>
+            
+            <div class="post-meta">
+                <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                    {{ .Date.Format "2 janvier 2006" }}
+                </time>
+                
+                {{- if .Params.categories -}}
+                <div class="post-categories">
+                    {{- range .Params.categories -}}
+                    <span class="post-category category-{{ . | urlize }}">{{ . }}</span>
+                    {{- end -}}
+                </div>
+                {{- end -}}
+            </div>
+        </header>
+        
+        <div class="post-content">
+            {{ if .Summary }}
+                {{ .Summary }}
+                {{- if .Truncated -}}
+                <p><a href="{{ .RelPermalink }}" class="read-more">Plonger dans cette réflexion...</a></p>
+                {{- end -}}
+            {{ else }}
+                {{ .Content | truncate 300 }}
+                <p><a href="{{ .RelPermalink }}" class="read-more">Lire la suite...</a></p>
+            {{ end }}
+        </div>
+    </article>
+    {{- end -}}
+    
+    {{- if gt (len $posts) 5 -}}
+    <div class="view-all">
+        <a href="{{ "/posts/" | relURL }}" class="view-all-link">Explorer toutes les entrées →</a>
+    </div>
+    {{- end -}}
+</section>
+{{- end -}}
+
+{{- $categories := .Site.Taxonomies.categories -}}
+{{- if $categories -}}
+<aside class="categories-widget">
+    <h3 class="widget-title">Univers intérieurs</h3>
+    <div class="categories-list">
+        {{- range $name, $taxonomy := $categories -}}
+        <a href="{{ "/categories/" | relURL }}{{ $name | urlize }}/" class="category-link category-{{ $name | urlize }}">
+            <span class="category-name">{{ $name | title }}</span>
+            <span class="category-count">{{ .Count }}</span>
+        </a>
+        {{- end -}}
+    </div>
+</aside>
+{{- end -}}
+
+{{- $tags := .Site.Taxonomies.tags -}}
+{{- if $tags -}}
+<aside class="tags-cloud">
+    <h3 class="widget-title">Nuages de pensées</h3>
+    <div class="tags-list">
+        {{- range $name, $taxonomy := $tags -}}
+        <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}/" class="tag" 
+           style="font-size: {{ add 0.8 (mul (div .Count 10.0) 0.8) }}rem;">
+            {{ $name }}
+        </a>
+        {{- end -}}
+    </div>
+</aside>
+{{- end -}}
+{{ end }}

@@ -1,7 +1,12 @@
 +++
 date = '2025-09-07T21:56:20+02:00'
 draft = false
-title = 'Première entrée de mon journal'
+title = "Premiere entree de mon journal"
+categories = ["Eclaircies"]
+tags = ["commencement", "introspection", "ecriture"]
+mood = "espoir et incertitude"
+weather = "crepuscule dore"
+summary = "Le debut de cette aventure introspective"
 +++
 
 # Début d'une nouvelle aventure

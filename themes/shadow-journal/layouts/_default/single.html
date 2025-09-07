@@ -1,0 +1,108 @@
+{{ define "main" }}
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ .Title }}</h1>
+        
+        <div class="post-meta">
+            <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "2 janvier 2006, 15h04" }}
+            </time>
+            
+            {{- if .Params.categories -}}
+            <div class="post-categories">
+                {{- range .Params.categories -}}
+                <a href="{{ "/categories/" | relURL }}{{ . | urlize }}/" class="post-category category-{{ . | urlize }}">
+                    {{ . }}
+                </a>
+                {{- end -}}
+            </div>
+            {{- end -}}
+            
+            {{- if .ReadingTime -}}
+            <span class="reading-time">{{ .ReadingTime }} min de lecture</span>
+            {{- end -}}
+        </div>
+    </header>
+    
+    {{- if .Params.summary -}}
+    <div class="post-summary">
+        <em>{{ .Params.summary }}</em>
+    </div>
+    {{- end -}}
+    
+    <div class="post-content">
+        {{ .Content }}
+    </div>
+    
+    <footer class="post-footer">
+        {{- if .Params.tags -}}
+        <div class="post-tags">
+            <strong>Réflexions :</strong>
+            <div class="taxonomy-terms">
+                {{- range .Params.tags -}}
+                <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
+                {{- end -}}
+            </div>
+        </div>
+        {{- end -}}
+        
+        {{- if .Params.mood -}}
+        <div class="post-mood">
+            <strong>État d'âme :</strong> <em>{{ .Params.mood }}</em>
+        </div>
+        {{- end -}}
+        
+        {{- if .Params.weather -}}
+        <div class="post-weather">
+            <strong>Temps :</strong> <em>{{ .Params.weather }}</em>
+        </div>
+        {{- end -}}
+    </footer>
+</article>
+
+{{- if .Site.Params.showRelatedPosts -}}
+{{- $related := .Site.RegularPages.Related . | first 3 -}}
+{{- if $related -}}
+<aside class="related-posts">
+    <h3>Autres moments d'introspection</h3>
+    <div class="related-list">
+        {{- range $related -}}
+        <article class="related-post">
+            <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 janvier 2006" }}</time>
+            {{- if .Params.categories -}}
+            <div class="related-categories">
+                {{- range .Params.categories -}}
+                <span class="category-{{ . | urlize }}">{{ . }}</span>
+                {{- end -}}
+            </div>
+            {{- end -}}
+        </article>
+        {{- end -}}
+    </div>
+</aside>
+{{- end -}}
+{{- end -}}
+
+{{- if or .NextInSection .PrevInSection -}}
+<nav class="post-nav">
+    {{- if .PrevInSection -}}
+    <div class="post-nav-prev">
+        <a href="{{ .PrevInSection.RelPermalink }}" title="{{ .PrevInSection.Title }}">
+            <span class="nav-label">← Entrée précédente</span>
+            <span class="nav-title">{{ .PrevInSection.Title | truncate 40 }}</span>
+        </a>
+    </div>
+    {{- end -}}
+    
+    {{- if .NextInSection -}}
+    <div class="post-nav-next">
+        <a href="{{ .NextInSection.RelPermalink }}" title="{{ .NextInSection.Title }}">
+            <span class="nav-label">Entrée suivante →</span>
+            <span class="nav-title">{{ .NextInSection.Title | truncate 40 }}</span>
+        </a>
+    </div>
+    {{- end -}}
+</nav>
+{{- end -}}
+{{ end }}
