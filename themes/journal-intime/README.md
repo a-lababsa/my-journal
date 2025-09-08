@@ -21,7 +21,7 @@ A warm, minimalist Hugo theme designed for intimate personal journaling, inspire
 1. **Add the theme to your Hugo site**:
 
 ```bash
-git submodule add https://github.com/a-lababsa/hugo-theme-journal.git themes/journal-intime
+git submodule add https://github.com/a-lababsa/my-journal.git themes/journal-intime
 ```
 
 2. **Update your `hugo.toml`**:
@@ -96,7 +96,7 @@ This theme embraces:
 
 ## 🌐 Demo
 
-Visit the [live demo](https://a-lababsa.github.io/hugo-theme-journal) to see the theme in action.
+Visit the [live demo](https://a-lababsa.github.io/my-journal) to see the theme in action.
 
 ## 📄 License
 

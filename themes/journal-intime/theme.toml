@@ -1,9 +1,9 @@
 name = "Journal Intime"
 license = "MIT"
-licenselink = "https://github.com/a-lababsa/hugo-theme-journal/blob/main/LICENSE"
+licenselink = "https://github.com/a-lababsa/my-journal/blob/main/LICENSE"
 description = "A warm, minimalist Hugo theme for intimate personal journaling inspired by Moleskine notebook aesthetics"
-homepage = "https://github.com/a-lababsa/hugo-theme-journal"
-demosite = "https://a-lababsa.github.io/hugo-theme-journal"
+homepage = "https://github.com/a-lababsa/my-journal"
+demosite = "https://a-lababsa.github.io/my-journal"
 tags = ["blog", "journal", "minimal", "elegant", "responsive", "dark-mode", "personal", "diary", "intimate", "moleskine"]
 features = ["responsive", "dark-mode", "minimal", "multilingual", "custom-css"]
 min_version = "0.118.0"
