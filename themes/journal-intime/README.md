@@ -19,11 +19,13 @@ A warm, minimalist Hugo theme designed for intimate personal journaling, inspire
 ## 🚀 Quick Start
 
 1. **Add the theme to your Hugo site**:
+
 ```bash
-git submodule add https://github.com/alexandrelababsa/hugo-theme-journal-intime.git themes/journal-intime
+git submodule add https://github.com/a-lababsa/hugo-theme-journal.git themes/journal-intime
 ```
 
 2. **Update your `hugo.toml`**:
+
 ```toml
 theme = 'journal-intime'
 languageCode = 'en' # or 'fr' for French
@@ -35,6 +37,7 @@ title = 'My Personal Journal'
 ```
 
 3. **Create your first entry**:
+
 ```bash
 hugo new posts/01-january-2024-first-thoughts.md
 ```
@@ -42,6 +45,7 @@ hugo new posts/01-january-2024-first-thoughts.md
 ## 📝 Writing Entries
 
 ### Entry Structure
+
 ```yaml
 +++
 date = '2024-01-01T20:00:00+01:00'
@@ -57,6 +61,7 @@ Your personal thoughts and reflections here...
 ```
 
 ### Categories
+
 - **Fragments**: Short notes, raw thoughts, captured moments
 - **Émotions**: Texts about anxiety, joy, anger, tenderness
 - **Réflexions**: Long, introspective entries and life meditations  
@@ -65,6 +70,7 @@ Your personal thoughts and reflections here...
 ## 🎨 Customization
 
 ### Color Palette
+
 ```css
 :root {
     --bg-color: #F5F1E6;      /* Moleskine ivory */
@@ -76,11 +82,13 @@ Your personal thoughts and reflections here...
 ```
 
 ### Dark Mode
+
 Automatically adapts all colors for comfortable nighttime reading. Toggle persists between sessions.
 
 ## 📖 Philosophy
 
 This theme embraces:
+
 - **Intimacy over performance**: Authentic self-expression
 - **Simplicity over complexity**: Minimal distractions
 - **Warmth over coldness**: Human, approachable design
@@ -88,7 +96,7 @@ This theme embraces:
 
 ## 🌐 Demo
 
-Visit the [live demo](https://alexandrelababsa.github.io/hugo-theme-journal-intime) to see the theme in action.
+Visit the [live demo](https://a-lababsa.github.io/hugo-theme-journal) to see the theme in action.
 
 ## 📄 License
 

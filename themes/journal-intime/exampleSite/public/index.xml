@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Journal Intime - Demo</title>
+    <link>http://localhost:1314/</link>
+    <description>Recent content on Journal Intime - Demo</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Jan 2024 11:20:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1314/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8 January 2024 – On writing</title>
+      <link>http://localhost:1314/posts/08-january-2024-on-writing/</link>
+      <pubDate>Mon, 08 Jan 2024 11:20:00 +0100</pubDate>
+      <guid>http://localhost:1314/posts/08-january-2024-on-writing/</guid>
+      <description>A meditation on why we write, and what happens when we allow words to flow without censorship</description>
+    </item>
+    <item>
+      <title>5 January 2024 – Difficult emotions</title>
+      <link>http://localhost:1314/posts/05-january-2024-difficult-emotions/</link>
+      <pubDate>Fri, 05 Jan 2024 16:45:00 +0100</pubDate>
+      <guid>http://localhost:1314/posts/05-january-2024-difficult-emotions/</guid>
+      <description>Learning to sit with uncomfortable feelings instead of running from them</description>
+    </item>
+    <item>
+      <title>3 January 2024 – Night thoughts</title>
+      <link>http://localhost:1314/posts/03-january-2024-night-thoughts/</link>
+      <pubDate>Wed, 03 Jan 2024 23:15:00 +0100</pubDate>
+      <guid>http://localhost:1314/posts/03-january-2024-night-thoughts/</guid>
+      <description>The quiet wisdom that emerges in the space between day and sleep</description>
+    </item>
+    <item>
+      <title>1 January 2024 – New beginnings</title>
+      <link>http://localhost:1314/posts/01-january-2024-new-beginnings/</link>
+      <pubDate>Mon, 01 Jan 2024 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1314/posts/01-january-2024-new-beginnings/</guid>
+      <description>Starting this year with intention and gentle curiosity about what lies ahead</description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1314/about/</link>
+      <pubDate>Mon, 01 Jan 2024 12:00:00 +0100</pubDate>
+      <guid>http://localhost:1314/about/</guid>
+      <description>&lt;h1 id=&#34;about-this-journal&#34;&gt;About this journal&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;&amp;ldquo;Writing is a way of talking without being interrupted.&amp;rdquo;&lt;/em&gt; — Jules Renard&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-intention-behind-these-words&#34;&gt;The intention behind these words&lt;/h2&gt;&#xA;&lt;p&gt;This digital journal was born from a simple need: to put words to daily experiences, emotions that pass through, reflections that emerge in silence.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reflection on Journal Intime - Demo</title>
+    <link>http://localhost:1314/tags/reflection/</link>
+    <description>Recent content in Reflection on Journal Intime - Demo</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2024 14:30:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/reflection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1 January 2024 – New beginnings</title>
+      <link>http://localhost:1314/posts/01-january-2024-new-beginnings/</link>
+      <pubDate>Mon, 01 Jan 2024 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1314/posts/01-january-2024-new-beginnings/</guid>
+      <description>Starting this year with intention and gentle curiosity about what lies ahead</description>
+    </item>
+  </channel>
+</rss>

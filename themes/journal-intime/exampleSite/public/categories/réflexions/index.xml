@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Réflexions on Journal Intime - Demo</title>
+    <link>http://localhost:1314/categories/r%C3%A9flexions/</link>
+    <description>Recent content in Réflexions on Journal Intime - Demo</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Jan 2024 11:20:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1314/categories/r%C3%A9flexions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8 January 2024 – On writing</title>
+      <link>http://localhost:1314/posts/08-january-2024-on-writing/</link>
+      <pubDate>Mon, 08 Jan 2024 11:20:00 +0100</pubDate>
+      <guid>http://localhost:1314/posts/08-january-2024-on-writing/</guid>
+      <description>A meditation on why we write, and what happens when we allow words to flow without censorship</description>
+    </item>
+  </channel>
+</rss>

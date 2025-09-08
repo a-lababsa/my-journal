@@ -3,34 +3,47 @@
     <div class="date-display">
         {{ now.Format "2 janvier 2006" }}
     </div>
+    <p class="home-description">
+        <em>{{ .Site.Params.description | default "Fragments d'ombre et éclats de lumière" }}</em>
+    </p>
 </div>
 
 {{- $posts := where .Site.RegularPages "Type" "posts" -}}
-{{- $recentPosts := first 10 $posts -}}
+{{- $recentPosts := first 8 $posts -}}
 
 {{- if $recentPosts -}}
 <section class="journal-entries">
+    <h2 class="entries-title">Dernières entrées</h2>
+    
     {{- range $recentPosts -}}
     <article class="journal-entry mood-{{ .Params.mood | default "neutral" | urlize }}">
-        <div class="entry-date">
+        <div class="entry-meta">
             <span class="mood-indicator"></span>
-            {{ .Date.Format "2 janvier 2006" }}
+            <time class="entry-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "2 janvier 2006" }}
+            </time>
+            {{- if .Params.categories -}}
+            <span class="entry-category">{{ index .Params.categories 0 }}</span>
+            {{- end -}}
         </div>
         
-        <h2 class="entry-title">
+        <h3 class="entry-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
+        </h3>
         
-        <div class="entry-content">
+        <div class="entry-excerpt">
             {{ if .Summary }}
-                {{ .Summary | plainify }}
+                {{ .Summary }}
                 {{- if .Truncated -}}
                 <p class="continue-reading">
-                    <a href="{{ .RelPermalink }}">...</a>
+                    <a href="{{ .RelPermalink }}">Lire la suite →</a>
                 </p>
                 {{- end -}}
             {{ else }}
-                {{ .Content | plainify | truncate 200 }}
+                {{ .Content | truncate 200 }}
+                <p class="continue-reading">
+                    <a href="{{ .RelPermalink }}">Lire la suite →</a>
+                </p>
             {{ end }}
         </div>
     </article>

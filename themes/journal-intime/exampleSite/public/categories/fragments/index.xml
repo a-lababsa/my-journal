@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fragments on Journal Intime - Demo</title>
+    <link>http://localhost:1314/categories/fragments/</link>
+    <description>Recent content in Fragments on Journal Intime - Demo</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 03 Jan 2024 23:15:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1314/categories/fragments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3 January 2024 – Night thoughts</title>
+      <link>http://localhost:1314/posts/03-january-2024-night-thoughts/</link>
+      <pubDate>Wed, 03 Jan 2024 23:15:00 +0100</pubDate>
+      <guid>http://localhost:1314/posts/03-january-2024-night-thoughts/</guid>
+      <description>The quiet wisdom that emerges in the space between day and sleep</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Journal Intime - Demo</title>
+    <link>http://localhost:1314/tags/</link>
+    <description>Recent content in Tags on Journal Intime - Demo</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 08 Jan 2024 11:20:00 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1314/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creativity</title>
+      <link>http://localhost:1314/tags/creativity/</link>
+      <pubDate>Mon, 08 Jan 2024 11:20:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/creativity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self-Expression</title>
+      <link>http://localhost:1314/tags/self-expression/</link>
+      <pubDate>Mon, 08 Jan 2024 11:20:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/self-expression/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Writing</title>
+      <link>http://localhost:1314/tags/writing/</link>
+      <pubDate>Mon, 08 Jan 2024 11:20:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/writing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Anxiety</title>
+      <link>http://localhost:1314/tags/anxiety/</link>
+      <pubDate>Fri, 05 Jan 2024 16:45:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/anxiety/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Growth</title>
+      <link>http://localhost:1314/tags/growth/</link>
+      <pubDate>Fri, 05 Jan 2024 16:45:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/growth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self-Compassion</title>
+      <link>http://localhost:1314/tags/self-compassion/</link>
+      <pubDate>Fri, 05 Jan 2024 16:45:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/self-compassion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Night</title>
+      <link>http://localhost:1314/tags/night/</link>
+      <pubDate>Wed, 03 Jan 2024 23:15:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/night/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Solitude</title>
+      <link>http://localhost:1314/tags/solitude/</link>
+      <pubDate>Wed, 03 Jan 2024 23:15:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/solitude/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Thoughts</title>
+      <link>http://localhost:1314/tags/thoughts/</link>
+      <pubDate>Wed, 03 Jan 2024 23:15:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/thoughts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hope</title>
+      <link>http://localhost:1314/tags/hope/</link>
+      <pubDate>Mon, 01 Jan 2024 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/hope/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>New Year</title>
+      <link>http://localhost:1314/tags/new-year/</link>
+      <pubDate>Mon, 01 Jan 2024 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/new-year/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reflection</title>
+      <link>http://localhost:1314/tags/reflection/</link>
+      <pubDate>Mon, 01 Jan 2024 14:30:00 +0100</pubDate>
+      <guid>http://localhost:1314/tags/reflection/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
