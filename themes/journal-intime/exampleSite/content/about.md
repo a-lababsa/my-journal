@@ -1,7 +1,8 @@
 +++
 date = '2024-01-01T12:00:00+01:00'
 draft = false
-title = "About"
+title = "À propos"
+url = "/a-propos/"
 +++
 
 # About this journal
