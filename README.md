@@ -155,7 +155,3 @@ This project is open source. Feel free to use and adapt for your own personal jo
 ---
 
 *"We write to taste life twice, in the moment and in retrospection."* — Anaïs Nin
-
-🤖 Generated with [Claude Code](https://claude.ai/code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
