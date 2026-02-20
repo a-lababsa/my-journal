@@ -5,11 +5,22 @@
     --bg-color: #F5F1E6;           /* Fond principal - ivoire doux Moleskine */
     --text-color: #2B2B2B;         /* Texte principal - gris-noir lisible */
     --title-color: #1C1C1C;        /* Titres - noir profond */
-    --link-color: #3A4E7A;         /* Liens - bleu encre */
-    --link-hover: #6A85B6;         /* Hover liens - bleu plus clair */
-    --border-color: #D6CFC4;       /* Bordures / séparateurs */
+    --link-color: #2E3E6A;         /* Liens - bleu encre (renforcé pour contraste WCAG AA) */
+    --link-hover: #1a2a50;         /* Hover liens */
+    --border-color: #C4BDB2;       /* Bordures / séparateurs */
     --bg-secondary: #FAF8F3;       /* Fond secondaire (cartes, posts) */
-    --date-color: #6B7280;         /* Dates en gris doux */
+    --date-color: #4A5568;         /* Dates - assombri pour contraste AA */
+    --focus-color: #2E3E6A;        /* Couleur du focus clavier */
+
+    /* Typographie de base */
+    --font-body: 'Merriweather', 'Lora', Georgia, serif;
+    --font-title: 'Caveat', cursive;
+    --font-dys: 'Atkinson Hyperlegible', Arial, sans-serif;
+
+    /* Espacement */
+    --line-height: 1.7;
+    --letter-spacing: normal;
+    --word-spacing: normal;
 }
 
 /* Reset et base */
@@ -43,15 +54,14 @@ a:hover, button:hover {
     background: inherit !important;
 }
 
-/* Import Google Fonts pour respecter spec.md */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Caveat:wght@400;500;600&display=swap');
-
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Merriweather', 'Lora', Georgia, serif;
+    font-family: var(--font-body);
     font-size: 18px;
-    line-height: 1.7;
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+    word-spacing: var(--word-spacing);
     min-height: 100vh;
 }
 
@@ -208,7 +218,7 @@ body {
 .entry-content, .post-content {
     font-size: 1.1rem;
     line-height: 1.7;
-    text-align: justify;
+    text-align: left;
 }
 
 .post-content h1, .post-content h2, .post-content h3, .post-content h4 {
@@ -281,10 +291,75 @@ body {
 }
 
 .list-header h1 {
-    font-family: 'Caveat', cursive;
+    font-family: var(--font-title);
     font-size: 2.8rem;
     font-weight: 600;
     color: var(--title-color);
+}
+
+/* ===========================
+   Accessibilité — bases
+   =========================== */
+
+/* Lien d'évitement (skip-link) */
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--link-color);
+    color: #fff;
+    border-radius: 0 0 4px 4px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus clavier visible pour tous les éléments interactifs */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Footer controls */
+.site-footer {
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.mode-toggle {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+.mode-toggle:hover {
+    border-color: var(--link-color);
+    color: var(--link-color);
+}
+
+.mode-toggle[aria-pressed="true"] {
+    background: var(--link-color);
+    color: #fff;
+    border-color: var(--link-color);
 }
 
 /* Toggle mode sombre */
@@ -568,4 +643,59 @@ html.tired-mode body {
     color: var(--date-color);
     font-style: italic;
     padding-left: calc(30px + 4px);
+}
+
+/* ===========================
+   Mode dyslexie
+   =========================== */
+
+html.dys-mode {
+    --font-body: 'Atkinson Hyperlegible', Arial, sans-serif;
+    --font-title: 'Atkinson Hyperlegible', Arial, sans-serif;
+    --line-height: 1.9;
+    --letter-spacing: 0.05em;
+    --word-spacing: 0.15em;
+}
+
+html.dys-mode body {
+    font-size: 19px;
+}
+
+html.dys-mode .entry-content,
+html.dys-mode .post-content {
+    line-height: 1.9;
+    max-width: 65ch;
+}
+
+html.dys-mode .entry-title,
+html.dys-mode .post-title,
+html.dys-mode .entries-title,
+html.dys-mode .site-title,
+html.dys-mode .list-header h1 {
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    letter-spacing: 0.03em;
+}
+
+html.dys-mode .citation-single-text {
+    font-family: 'Atkinson Hyperlegible', Arial, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+/* Pas d'italique en mode dys (difficile à lire pour les dys) */
+html.dys-mode em,
+html.dys-mode i,
+html.dys-mode blockquote,
+html.dys-mode .citation-text,
+html.dys-mode .citation-source {
+    font-style: normal;
+}
+
+/* Espacement entre les paragraphes renforcé */
+html.dys-mode p + p {
+    margin-top: 1.2em;
+}
+
+html.dys-mode .tired-mode {
+    --font-body: 'Atkinson Hyperlegible', Arial, sans-serif;
 }

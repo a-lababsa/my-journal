@@ -1,55 +1,54 @@
-// Mode sombre simple pour journal intime
-(function() {
+(function () {
     'use strict';
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        // Appliquer d'abord les préférences sauvegardées
-        loadPreferences();
-        // Puis initialiser le toggle
+
+    document.addEventListener('DOMContentLoaded', function () {
         initTiredMode();
+        initDysMode();
     });
-    
+
+    // ── Mode sombre ──────────────────────────────────────────
     function initTiredMode() {
-        const toggle = document.createElement('button');
-        toggle.className = 'tired-mode-toggle';
-        
-        // Vérifier l'état actuel pour définir la bonne icône
-        const isActive = document.body.classList.contains('tired-mode');
-        toggle.innerHTML = isActive ? '☀️' : '🌙';
-        toggle.title = isActive ? 'Mode jour' : 'Mode nuit pour les yeux fatigués';
-        
-        toggle.addEventListener('click', toggleTiredMode);
-        document.body.appendChild(toggle);
+        const btn = document.getElementById('tired-mode-btn');
+        if (!btn) return;
+
+        const isActive = document.documentElement.classList.contains('tired-mode');
+        updateTiredBtn(btn, isActive);
+
+        btn.addEventListener('click', function () {
+            const active = document.documentElement.classList.toggle('tired-mode');
+            document.body.classList.toggle('tired-mode', active);
+            localStorage.setItem('tired-mode', active);
+            updateTiredBtn(btn, active);
+        });
     }
-    
-    function toggleTiredMode() {
-        const html = document.documentElement;
-        const body = document.body;
-        const isActive = body.classList.toggle('tired-mode');
-        
-        // Appliquer aussi au html pour la cohérence
-        if (isActive) {
-            html.classList.add('tired-mode');
-        } else {
-            html.classList.remove('tired-mode');
-        }
-        
-        const toggle = document.querySelector('.tired-mode-toggle');
-        if (toggle) {
-            toggle.innerHTML = isActive ? '☀️' : '🌙';
-            toggle.title = isActive ? 'Mode jour' : 'Mode nuit pour les yeux fatigués';
-        }
-        
-        localStorage.setItem('tired-mode', isActive);
+
+    function updateTiredBtn(btn, isActive) {
+        btn.textContent = isActive ? '☀️' : '🌙';
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        btn.setAttribute('aria-label', isActive ? 'Désactiver le mode sombre' : 'Activer le mode sombre');
     }
-    
-    function loadPreferences() {
-        const savedTiredMode = localStorage.getItem('tired-mode');
-        if (savedTiredMode === 'true') {
-            // Le mode sombre est déjà appliqué via le script inline
-            // On s'assure juste que body a aussi la classe
-            document.body.classList.add('tired-mode');
-        }
+
+    // ── Mode dyslexie ─────────────────────────────────────────
+    function initDysMode() {
+        const btn = document.getElementById('dys-mode-btn');
+        if (!btn) return;
+
+        const isActive = document.documentElement.classList.contains('dys-mode');
+        updateDysBtn(btn, isActive);
+
+        btn.addEventListener('click', function () {
+            const active = document.documentElement.classList.toggle('dys-mode');
+            localStorage.setItem('dys-mode', active);
+            updateDysBtn(btn, active);
+        });
     }
-    
+
+    function updateDysBtn(btn, isActive) {
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        btn.setAttribute('aria-label', isActive
+            ? 'Désactiver le mode dyslexie'
+            : 'Activer le mode dyslexie — police et espacement adaptés'
+        );
+    }
+
 })();
