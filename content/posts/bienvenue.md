@@ -2,6 +2,7 @@
 date = '2026-02-20T00:00:00+02:00'
 draft = false
 title = "Bienvenue"
+description = "Journal de pensées entre code et santé mentale. Alexandre Lababsa, développeur et pair aidant, ouvre un espace pour ses fragments, ses mots, ses contradictions."
 categories = ["Fragments"]
 mood = "hopeful"
 summary = "Tu es là. Peu importe comment. C'est déjà quelque chose."
