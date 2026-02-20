@@ -164,9 +164,15 @@ body {
 .entry-meta {
     display: flex;
     align-items: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 8px 15px;
     margin-bottom: 15px;
     font-size: 0.9rem;
+}
+
+/* Le point d'humeur reste collé à la date quand la ligne wrape */
+.entry-meta .mood-indicator {
+    flex-shrink: 0;
 }
 
 .entry-date {
@@ -325,12 +331,18 @@ body {
     top: 0;
 }
 
-/* Focus clavier visible pour tous les éléments interactifs */
-a:focus-visible,
-button:focus-visible {
+/* Focus visible — :focus en fallback pour iOS Safari qui ignore :focus-visible */
+a:focus,
+button:focus {
     outline: 3px solid var(--focus-color);
     outline-offset: 3px;
     border-radius: 2px;
+}
+
+/* Sur navigateurs qui supportent :focus-visible, on masque le focus au clic souris */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
 }
 
 /* Footer controls */
@@ -350,6 +362,9 @@ button:focus-visible {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: 20px;
+    /* min 44px de hauteur pour zone de tap WCAG 2.5.5 */
+    min-height: 44px;
+    min-width: 44px;
     padding: 6px 16px;
     font-size: 0.9rem;
     cursor: pointer;
