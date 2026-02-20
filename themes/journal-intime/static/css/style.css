@@ -480,36 +480,70 @@ html.tired-mode body {
     .container {
         padding: 40px 20px;
     }
-    
+
     .site-title {
         font-size: 2.5rem;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
-    
+
+    /* Nav : wrap naturel plutôt qu'empilement vertical */
     .site-nav {
-        flex-direction: column;
-        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 24px;
         font-size: 1rem;
     }
-    
+
     .entry-title, .post-title {
         font-size: 1.6rem;
     }
-    
+
     .entry-content, .post-content {
         font-size: 1rem;
     }
-    
+
     .single-post .post-title {
         font-size: 1.8rem;
     }
-    
-    .tired-mode-toggle {
-        position: relative;
-        top: auto;
-        right: auto;
-        margin: 0 auto 20px;
-        display: block;
+
+    /* entry-meta : wrap si trop d'éléments */
+    .entry-meta {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* Citation homepage */
+    .home-citation {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .home-citation-footer {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .home-citation-link {
+        margin-left: 0;
+    }
+
+    /* Citations — thèmes alignés à gauche */
+    .citation-themes {
+        justify-content: flex-start;
+    }
+
+    /* Footer controls */
+    .footer-controls {
+        gap: 10px;
+    }
+
+    /* 404 */
+    .not-found-code {
+        font-size: 4rem;
+    }
+
+    .not-found-title {
+        font-size: 1.6rem;
     }
 }
 
@@ -517,13 +551,40 @@ html.tired-mode body {
     .container {
         padding: 30px 15px;
     }
-    
+
     .site-title {
         font-size: 2rem;
     }
-    
+
+    .site-header {
+        margin-bottom: 50px;
+    }
+
     .entry-title, .post-title {
         font-size: 1.4rem;
+    }
+
+    /* Temps de lecture masqué sur très petit écran — la liste est déjà dense */
+    .entry-meta .reading-time {
+        display: none;
+    }
+
+    /* Citation homepage plus compacte */
+    .home-citation {
+        padding: 16px;
+    }
+
+    .home-citation-text {
+        font-size: 1rem;
+    }
+
+    /* Mode dys : taille de base légèrement réduite sur mobile */
+    html.dys-mode body {
+        font-size: 17px;
+    }
+
+    html.dys-mode .citation-single-text {
+        font-size: 1.3rem;
     }
 }
 
