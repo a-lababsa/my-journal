@@ -29,7 +29,7 @@ Je n'essaie pas de changer le monde. J'essaie de contribuer à un changement de 
 
 C'est ce que je fais à La Maison Perchée, où je suis pair aidant depuis janvier 2023. J'y accueille des gens que je ne connais pas, j'enlève le masque qu'on porte en société, j'écoute. Pas pour donner des réponses — pour créer un espace où quelqu'un peut enfin en chercher.
 
-J'y ai aussi créé des outils numériques, parce que je suis développeur et que les deux ne sont pas contradictoires. Le code, comme la pair-aidance, c'est construire quelque chose d'utile pour les autres. MentalKit, WikiPerché — des petites pierres, encore.
+J'y ai aussi créé des outils numériques, parce que je suis développeur et que les deux ne sont pas contradictoires. Le code, comme la pair-aidance, c'est construire quelque chose d'utile pour les autres. [MentalKit](https://bio.site/mentalkit), — des petites pierres, encore.
 
 ## Le code comme philosophie pratique
 
