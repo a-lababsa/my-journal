@@ -1,0 +1,44 @@
+{{ define "main" }}
+<div class="list-header">
+    <h1>Citations</h1>
+    <p class="list-subtitle">Aphorismes et fragments de pensée</p>
+</div>
+
+{{- $citations := .Pages.ByDate.Reverse -}}
+
+{{- if $citations -}}
+{{- $themes := slice -}}
+{{- range $citations -}}
+    {{- with .Params.theme -}}
+        {{- $themes = $themes | append . -}}
+    {{- end -}}
+{{- end -}}
+{{- $themes = $themes | uniq | sort -}}
+
+{{- if $themes -}}
+<nav class="citation-themes">
+    {{- range $themes -}}
+    <a href="#theme-{{ . | urlize }}" class="theme-tag">{{ . }}</a>
+    {{- end -}}
+</nav>
+{{- end -}}
+
+<section class="citations-list">
+    {{- range $citations -}}
+    <article class="citation-card">
+        <blockquote class="citation-text">
+            {{ .Content }}
+        </blockquote>
+        <footer class="citation-footer">
+            {{- with .Params.theme -}}
+            <span class="citation-theme">{{ . }}</span>
+            {{- end -}}
+            <time class="citation-date" datetime="{{ .Date.Format "2006-01-02" }}">
+                {{ .Date.Format "2 janvier 2006" }}
+            </time>
+        </footer>
+    </article>
+    {{- end -}}
+</section>
+{{- end -}}
+{{ end }}

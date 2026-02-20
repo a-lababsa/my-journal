@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article class="single-citation">
+    <div class="citation-single-date">
+        {{ .Date.Format "2 janvier 2006" }}
+        {{- with .Params.theme -}}
+        <span class="citation-theme">{{ . }}</span>
+        {{- end -}}
+    </div>
+
+    <blockquote class="citation-single-text">
+        {{ .Content }}
+    </blockquote>
+
+    {{- with .Params.source -}}
+    <p class="citation-source">— {{ . }}</p>
+    {{- end -}}
+</article>
+{{ end }}

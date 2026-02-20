@@ -1,40 +1,50 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://a-lababsa.github.io/my-journal/'
 languageCode = 'fr-fr'
 DefaultContentLanguage = "fr"
-title = 'Mon Journal Intime'
+title = 'Alexandre Lababsa'
 theme = 'journal-intime'
 
-summarylength = 10
+summarylength = 30
 enableEmoji = true
 enableRobotsTXT = true
-
-# Syntax highlighting
-pygmentsUseClasses = true   
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
 
 [markup]
     [markup.goldmark]
       [markup.goldmark.renderer]
-        unsafe=true
+        unsafe = true
 
 [taxonomies]
     category = "categories"
-    series = "series"
     tag = "tags"
+    theme = "themes"
 
 [params]
-  title = "Mon Journal Intime"
-  author = "Âme Nocturne"
-  subtitle = "Fragments d'ombre et éclats de lumière"
-  description = "Un espace d'introspection où les pensées prennent forme dans la pénombre mystérieuse de l'âme"
-  keywords = ["journal intime", "introspection", "réflexions", "ombre", "lumière", "pensées"]
+  title = "Alexandre Lababsa"
+  author = "Alexandre Lababsa"
+  subtitle = "Dev, militant, en construction permanente"
+  description = "Journal de pensées — philosophie, santé mentale, tech, artisanat du code"
+  keywords = ["journal", "philosophie", "développement", "santé mentale", "craftsmanship"]
   favicon = "favicons/"
   customCss = []
-  customJs = ["js/mystical.js"] 
+  customJs = []
   mainSections = ["posts"]
   showRelatedPosts = true
   numberOfRelatedPosts = 3
   singleDateFormat = "2 janvier 2006"
   indexDateFormat = "2 janvier 2006"
   listDateFormat = "2 janvier 2006"
+
+[[menus.main]]
+  name = "Journal"
+  url = "/posts/"
+  weight = 1
+
+[[menus.main]]
+  name = "Citations"
+  url = "/citations/"
+  weight = 2
+
+[[menus.main]]
+  name = "À propos"
+  url = "/a-propos/"
+  weight = 3
