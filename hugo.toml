@@ -48,3 +48,8 @@ enableRobotsTXT = true
   name = "À propos"
   url = "/a-propos/"
   weight = 3
+
+[[menus.main]]
+  name = "Colophon"
+  url = "/colophon/"
+  weight = 4
