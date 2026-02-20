@@ -1,16 +1,17 @@
 {{ define "main" }}
 <article class="single-post mood-{{ .Params.mood | default "neutral" | urlize }}">
     <div class="post-date">
-        <span class="mood-indicator"></span>
-        {{ .Date.Format "2 janvier 2006" }}
+        <span class="mood-indicator" aria-hidden="true"></span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 janvier 2006" }}</time>
+        <span class="reading-time" aria-label="{{ .ReadingTime }} minutes de lecture">{{ .ReadingTime }} min de lecture</span>
     </div>
-    
+
     <h1 class="post-title">{{ .Title }}</h1>
-    
+
     <div class="post-content">
         {{ .Content }}
     </div>
-    
+
     {{- partial "related-entries.html" . -}}
 </article>
 {{ end }}

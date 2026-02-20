@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="not-found">
+    <p class="not-found-code" aria-hidden="true">404</p>
+    <h1 class="not-found-title">Cette page n'existe pas</h1>
+    <p class="not-found-text">
+        Peut-être qu'elle n'a pas encore été écrite.<br>
+        Ou qu'elle a disparu, comme certaines pensées au réveil.
+    </p>
+    <a href="{{ "/" | relURL }}" class="not-found-link">Retour à l'accueil →</a>
+</div>
+{{ end }}

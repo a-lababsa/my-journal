@@ -49,10 +49,13 @@
                 <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
             </p>
             <nav class="site-nav" aria-label="Navigation principale">
-                <a href="{{ "/" | relURL }}" class="nav-link"
+                <a href="{{ "/" | relURL }}" class="nav-link{{ if .IsHome }} nav-link--active{{ end }}"
                    {{- if .IsHome }} aria-current="page"{{ end }}>Accueil</a>
+                {{- $currentURL := .RelPermalink -}}
                 {{- range .Site.Menus.main -}}
-                <a href="{{ .URL | relURL }}" class="nav-link">{{ .Name }}</a>
+                {{- $active := hasPrefix $currentURL (.URL | relURL) -}}
+                <a href="{{ .URL | relURL }}" class="nav-link{{ if $active }} nav-link--active{{ end }}"
+                   {{- if $active }} aria-current="page"{{ end }}>{{ .Name }}</a>
                 {{- end -}}
             </nav>
         </header>

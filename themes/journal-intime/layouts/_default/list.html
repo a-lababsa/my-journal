@@ -11,23 +11,24 @@
 {{ if eq .Section "posts" }}
 {{- $posts := .Pages -}}
 {{- if $posts -}}
-<section class="journal-entries">
+<section class="journal-entries" aria-label="Entrées du journal">
     {{- range $posts -}}
     <article class="journal-entry mood-{{ .Params.mood | default "neutral" | urlize }}">
         <div class="entry-meta">
-            <span class="mood-indicator"></span>
+            <span class="mood-indicator" aria-hidden="true"></span>
             <time class="entry-date" datetime="{{ .Date.Format "2006-01-02" }}">
                 {{ .Date.Format "2 janvier 2006" }}
             </time>
             {{- if .Params.categories -}}
             <span class="entry-category">{{ index .Params.categories 0 }}</span>
             {{- end -}}
+            <span class="reading-time">{{ .ReadingTime }} min</span>
         </div>
-        
-        <h3 class="entry-title">
+
+        <h2 class="entry-title">
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h3>
-        
+        </h2>
+
         <div class="entry-excerpt">
             {{ if .Summary }}
                 {{ .Summary }}
