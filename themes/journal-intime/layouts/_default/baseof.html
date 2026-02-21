@@ -146,7 +146,7 @@
                 </button>
             </div>
             <div class="footer-meta">
-                {{- $lastPost := first 1 (where .Site.RegularPages "Section" "posts") -}}
+                {{- $lastPost := first 1 (where (.Site.RegularPages.ByDate.Reverse) "Section" "posts") -}}
                 {{- with index $lastPost 0 }}
                 <span class="footer-last-entry">Dernière entrée : {{ .Date.Format "2 janvier 2006" }}</span>
                 {{- end }}
