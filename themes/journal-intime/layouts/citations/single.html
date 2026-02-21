@@ -7,9 +7,16 @@
         {{- end -}}
     </div>
 
+    {{- with .Params.original -}}
+    <blockquote class="citation-single-text">
+        {{ . }}
+    </blockquote>
+    <p class="citation-translation">{{ $.Content }}</p>
+    {{- else -}}
     <blockquote class="citation-single-text">
         {{ .Content }}
     </blockquote>
+    {{- end -}}
 
     {{- with .Params.source -}}
     <p class="citation-source">— {{ . }}</p>

@@ -1,5 +1,5 @@
 +++
-date = '2025-09-11T10:00:00+02:00'
+date = '2026-02-21T00:00:00+01:00'
 draft = false
 title = "Faire évoluer le monde"
 theme = "politique"

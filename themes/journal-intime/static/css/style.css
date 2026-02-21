@@ -100,8 +100,8 @@ body {
 .site-nav {
     display: flex;
     justify-content: center;
-    gap: 60px;
-    font-size: 1.1rem;
+    gap: 36px;
+    font-size: 1rem;
 }
 
 .nav-link {
@@ -279,6 +279,15 @@ body {
 
 .continue-reading a:hover {
     color: var(--link-hover);
+}
+
+/* Phrase d'accroche (ex : à propos) */
+.post-accroche {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--date-color);
+    margin-bottom: 2rem;
+    text-decoration: none;
 }
 
 /* Page individuelle */
@@ -753,6 +762,14 @@ html.tired-mode body {
     color: var(--date-color);
     font-style: italic;
     padding-left: calc(30px + 4px);
+}
+
+.citation-translation {
+    font-size: 0.95rem;
+    color: var(--date-color);
+    font-style: italic;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
 }
 
 /* ===========================

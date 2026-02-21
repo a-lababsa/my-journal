@@ -1,13 +1,11 @@
 +++
-date = '2025-09-07T23:00:00+02:00'
+date = '2026-02-21T00:00:00+01:00'
 draft = false
 title = "À propos"
 description = "Je ne subis pas — je questionne, je construis, je reprends."
 +++
 
-*Je ne subis pas — je questionne, je construis, je reprends.*
-
----
+<p class="post-accroche"><em>Je ne subis pas — je questionne, je construis, je reprends.</em></p>
 
 Je m'appelle Alexandre Lababsa. Développeur web, Software Craftsman, pair aidant, Référent Handicap. Originaire de Picardie, parisien depuis dix ans par adoption.
 
